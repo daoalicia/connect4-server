@@ -12,7 +12,7 @@ app.use(express.json());
 // let connection = mysql.createConnection(credentials);
 // connection.connect();
 
-const port = 443;
+const port = 3443;
 app.listen(port, () => {
     console.log(`We're live on port ${port}!`);
 });
