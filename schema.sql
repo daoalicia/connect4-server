@@ -5,5 +5,5 @@ CREATE TABLE board (
   colNum INT,
   rowNum INT,
   isPlayer1 BOOL,
-  isPlayer2 BOOL,
+  isPlayer2 BOOL
 );
