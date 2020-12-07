@@ -4,6 +4,6 @@ CREATE TABLE board (
   cell_id SERIAL PRIMARY KEY,
   colNum INT,
   rowNum INT,
-  isPlayer1 BOOL,
-  isPlayer2 BOOL
+  isPlayer1 INT DEFAULT 0,
+  isPlayer2 INT DEFAULT 0
 );
