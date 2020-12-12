@@ -29,7 +29,7 @@ app.get('/play-connect4', (request, response) => {
   connection.query(query, (error, rows) => {
     response.send({
         ok: true,
-        memories: rows.map(rowToObject),
+        board: rows.map(rowToObject),
     });
   });
 });
