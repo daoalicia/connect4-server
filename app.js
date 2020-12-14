@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
 const fs = require('fs');
-const { request } = require('http');
+// const { request } = require('https');
 
 const app = express();
 app.use(cors());
@@ -20,6 +20,7 @@ function rowToObject(row) {
         rowNum: row.rowNum,
         isPlayer1: row.isPlayer1,
         isPlayer2: row.isPlayer2,
+        currentPlayer: row.currentPlayer,
     };
 }
 
@@ -33,6 +34,19 @@ app.get('/play-connect4', (request, response) => {
     });
   });
 });
+
+
+// update cell info
+//app.patch('/play-connect4/:id', (request, response) => {
+//  const query = 'UPDATE board SET isPlayer1 = ? WHERE id = ?';
+//  const params = [request.body.isPlayer1, request.params.id];
+//  connection.query(query, (error, rows) => {
+//    response.send({
+//        ok: true,
+//    });
+//  });
+//});
+
 
 const port = 5000;
 app.listen(port, () => {
